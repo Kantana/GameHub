@@ -1,0 +1,79 @@
+* Database
+    - Ranking (upvotes)
+    - Rating (ESRB type)
+    - Platforms
+    - Genres
+    - Release date
+    - Developer
+    - Publisher
+    - Country of origin
+    - Languages (spoken + text)
+    - Levels/chapters/acts/percentage/none
+    - Tags
+    - Related games (franchise etc.)
+    - Franchise timeline (spoiler tagged?)
+    - News/release and DLC info
+    - Links to relevant sites (e.g. Gametrailers)
+
+* Features
+    - Link with Steam/PSN/Xbox Live/Nintendo friend codes
+    - Login with Google/Facebook + local
+    - Filter on title/platform/year/genre/developer/publisher
+    - Customized browsing based on favorite tags/categories (optional)
+    - Forums
+    - Dashboard/Friend feed?
+    - Profile
+        + Avatar
+        + Name
+        + Comments
+        + Friends
+            = Find games you have in common with (multiple) friends
+                ~ Filterable by platform/genre/features/tags
+        + Screenshots/movies (connect to Youtube/Twitch/etc?)
+        + Systems owned (current/previously)
+        + Favorite games/genres/etc. (separate lists/ordered or unordered/max 20)
+        + Blog posts/blurbs/status updates?
+        + List
+            = Playing/completed story or career/100%/on-hold/dropped/bought/wanted
+            = Progress (optional?/total hidden behind spoiler tags?)
+            = Priority (ultra hyped/high/normal/low/some day)
+            = Achievements (must have linked account)
+            = Custom notes/checklists/goals/targets
+            = Tags
+            = Hours played (from Steam etc. or manual input?)
+            = DLC?
+            = Installed?
+    - Consolidated pages for identical multiplatform games/different editions (separate ratings?)
+    - Hubs for platforms, developers, games etc.
+        + Aggregated statistics
+    - Users can add missing games to database (suggest existing/auto consolidate?/moderated?)
+        + Needs to have been a member for one week in order to maintain some integrity
+    - Users can upvote games
+        + No 1-10 scale because of fanboys etc.
+        + One vote per account
+        + Needs to have been a member for one week in order to curb creation of fake accounts
+        + Vote can be revoked
+    - User reviews (kinda like blog posts with comments and thumb ratings)
+    - User created collections/collages
+    - Recommendations/suggestions (auto and custom/dismissable)
+    - Greenlight/Kickstarter weekly digest section?
+    - Spoiler tags
+    - Color themes woop woop
+    - Clubs/clans/groups
+    - PMs
+
+* Technical
+    - Responsive design
+    - Technologies
+        + Apache
+        + MySQL
+        + Propel
+        + PHP5
+        + Silex/Symfony2
+        + Twig
+        + HTML5
+        + CSS3
+        + Javascript
+        + jQuery
+        + AJAX
+        + Twitter Bootstrap

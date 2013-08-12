@@ -1,0 +1,143 @@
+Developer
+    ID
+    Name
+    Country
+    Adress
+    Founded
+    Closed
+    Parent
+    Logo
+    Description
+
+Publisher
+    ID
+    Name
+    Country
+    Adress
+    Founded
+    Closed
+    Parent
+    Logo
+    Description
+    
+Platform
+    ID
+    Name
+    Manufacturer
+    Date
+    Logo
+    Image
+    Description
+
+Genre
+    ID
+    Name
+    Description
+
+Language
+    ID
+    Name
+    Flag
+
+Country
+    ID
+    Name
+    Flag
+
+Game
+    ID
+    Name
+    Platform
+    Developers
+    Publisher
+    Date
+    Genre
+    Languages
+    Expansions
+    Editions
+    Progress meter
+    Achivements
+    Cover
+    Description
+
+Expansion
+    ID
+    Name
+    Parent
+    Cover
+    Description
+
+Edition
+    ID
+    Name
+    Parent
+    Cover
+    Description
+
+Tag
+    ID
+    Name
+    Description
+
+User
+    ID
+    Nickname
+    Firstname
+    Surname
+    Country
+    E-mail
+    Avatar
+    Platforms
+    Favorites
+    Genres
+    Friends
+    List
+    Recommendations
+    Status
+
+Favorite
+    User
+    Game
+    Order
+
+List
+    ID
+    User
+    Game
+    Expansions
+    Edition
+    Status
+    Priority
+    Progress
+    Achievements
+    Tags
+    Notes
+    Hours played
+
+Recommendation
+    ID
+    User
+    Date
+    Game
+    Comment
+
+Collage
+    ID
+    User
+    Date
+    Name
+    Tags
+    Game
+    
+Comment
+    ID
+    User
+    Date
+    Parent
+    Message
+    
+Blog
+    ID
+    User
+    Date
+    Message

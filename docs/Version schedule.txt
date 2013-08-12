@@ -1,0 +1,27 @@
+v1: User accounts
+    Basic game search
+    Basic game pages
+    Full list functionality
+
+v2: Hubs for games, platforms, developers, publishers
+    Browse, sort and filter on genres, tags, platforms, developers, publishers, year and ESRB rating
+    Voting
+    Users can add missing games
+    Friends
+    Shared games, filterable, multiple users
+
+v3: Profile pages
+    Linking accounts
+    Favorites
+    Forum
+
+v4: Aggregated statistics
+    Status updates
+
+v5: User reviews
+    Collages
+    Recommendations
+
+v6: Clubs/clans/groups
+    PMs
+    Comments

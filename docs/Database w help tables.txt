@@ -1,0 +1,215 @@
+Developer
+    ID
+    Name
+    Country
+    Adress
+    Founded
+    Closed
+    LogoPath
+    Description
+
+DeveloperParent
+    ChildID
+    ParentID
+
+Publisher
+    ID
+    Name
+    Country
+    Adress
+    Founded
+    Closed
+    LogoPath
+    Description
+
+PublisherParent
+    ChildID
+    ParentID
+
+Platform
+    ID
+    Name
+    Date
+    LogoPath
+    ImagePath
+    Description
+
+PlatformManufacturer
+    PlatformID
+    ManufacturerID (Publisher)
+
+Genre
+    ID
+    Name
+    Description
+
+Language
+    ID
+    Name
+    Flag
+
+Country
+    ID
+    Name
+    Flag
+
+Game
+    ID
+    Name
+    Date
+    ESRB
+    ProgressType
+    ProgressLength
+    Achievements
+    Cover
+    Description
+
+Expansion
+    ID
+    Name
+    Cover
+    ProgressType
+    ProgressLength
+    Description
+
+Edition
+    ID
+    Name
+    Cover
+    Description
+
+GamePlatform
+    GameID
+    PlatformID
+
+GameDeveloper
+    GameID
+    DeveloperID
+
+GamePublisher
+    GameID
+    PublisherID
+
+GameGenre
+    GameID
+    GenreID
+
+GameAudioLanguage
+    GameID
+    LanguageID
+    
+GameTextLanguage
+    GameID
+    LanguageID
+
+GameExpansionPlatform
+    GameID
+    ExpansionID
+    PlatformID
+
+GameEditionPlatform
+    GameID
+    EditionID
+    PlatformID
+
+GameEditionExpansion
+    EditionID
+    ExpansionID
+
+GameTag
+    GameID
+    TagID
+
+Tag
+    ID
+    Name
+    Description
+
+User
+    ID
+    Nickname
+    Password
+    Firstname (Optional)
+    Surname (Optional)
+    E-mail
+    Avatar
+    JoinTime
+    SteamID
+    PsnID
+    XboxID
+    WiiID
+    3dsID
+    Description
+
+UserCountry
+    UserID
+    CountryID
+
+UserPlatform
+    UserID
+    PlatformID
+
+UserFavorite
+    UserID
+    GameID
+    Order
+
+UserFriend
+    UserID
+    FriendID
+
+UserStatus
+    UserID
+    Time
+    Status
+
+List
+    UserID
+    Game
+    Expansions
+    Edition
+    Status
+    Priority
+    Progress
+    Achievements
+    Tags
+    Notes
+    Hours played
+
+Recommendation
+    ID
+    UserID
+    Date
+    Game
+    Comment
+
+Collage
+    ID
+    Date
+    Name
+
+CollageUser
+    CollageID
+    UserID
+
+CollageGame
+    CollageID
+    GameID
+    PlatformID
+
+CollageTag
+    CollageID
+    TagID
+    
+Comment
+    ID
+    User
+    Time
+    Parent
+    Message
+    
+Blog
+    ID
+    User
+    Time
+    Message
