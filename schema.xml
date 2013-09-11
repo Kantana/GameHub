@@ -243,7 +243,7 @@
         <foreign-key foreignTable="Game" phpName="Game" refPhpName="GameLanguageText">
             <reference local="IdGame" foreign="Id" />
         </foreign-key>
-        <foreign-key foreignTable="Language" phpName="Language" refPhpName="GameLanguageText>
+        <foreign-key foreignTable="Language" phpName="Language" refPhpName="GameLanguageText">
             <reference local="IdLanguage" foreign="Id" />
         </foreign-key>
     </table>
