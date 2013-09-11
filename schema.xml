@@ -195,6 +195,7 @@
     <table name="Friend" phpName="Friend" isCrossRef="true">
         <column name="User1Id" type="integer" required="true" primaryKey="true" />
         <column name="User2Id" type="integer" required="true" primaryKey="true" />
+        <behavior name="nested_set" />
         
         <foreign-key foreignTable="User" phpName="User" refPhpName="Friend">
             <reference local="User1Id" foreign="Id" />
