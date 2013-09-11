@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <propel>
+    <datasources default="gamehub">
+      <datasource id="gamehub">
+        <adapter>mysql</adapter>
+        <connection>
+          <dsn>mysql:host=localhost;dbname=gamehub</dsn>
+          <user>gamehub</user>
+          <password>hubgame</password>
+        </connection>
+      </datasource>
+    </datasources>
+  </propel>
+</config>
