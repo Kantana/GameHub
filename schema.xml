@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <database name="GameHub" defaultIdMethod="native">
+
     <table name="Developer" phpName="Developer">
         <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="Name" type="varchar" size="255" required="true" />
@@ -46,8 +47,8 @@
     <table name="Game" phpName="Game">
         <column name="Id" type="bigint" required="true" primaryKey="true" autoIncrement="true" />
         <column name="Name" type="varchar" size="255" required="true" />
-        <column name="Developer" type="integer">
-        <column name="Publisher" type="integer">
+        <column name="Developer" type="integer" />
+        <column name="Publisher" type="integer" />
         <column name="ReleaseUS" type="date" />
         <column name="ReleaseEU" type="date" />
         <column name="ReleaseJP" type="date" />
@@ -66,8 +67,8 @@
         <column name="Id" type="bigint" required="true" primaryKey="true" autoIncrement="true" />
         <column name="Name" type="varchar" size="255" required="true" />
         <column name="ParentGame" type="integer" required="true" />
-        <column name="Developer" type="integer">
-        <column name="Publisher" type="integer">
+        <column name="Developer" type="integer" />
+        <column name="Publisher" type="integer" />
         <column name="ReleaseUS" type="date" />
         <column name="ReleaseEU" type="date" />
         <column name="ReleaseJP" type="date" />
@@ -190,15 +191,6 @@
             <reference local="UserId" foreign="Id" />
         </foreign-key>
     </table>
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     <table name="Friend" phpName="Friend" isCrossRef="true">
         <column name="User1Id" type="integer" required="true" primaryKey="true" />
@@ -509,6 +501,4 @@
         </foreign-key>
     </table>
     
-    
-
 </database>
