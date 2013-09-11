@@ -1,139 +1,134 @@
 Developer
-    ID
+    ID*
     Name
     Country
     Adress
     Founded
     Closed
-    LogoPath
     Description
-
-DeveloperParent
-    ChildID
-    ParentID
+    LogoPath
 
 Publisher
-    ID
+    ID*
     Name
     Country
     Adress
     Founded
     Closed
-    LogoPath
     Description
-
-PublisherParent
-    ChildID
-    ParentID
+    LogoPath
 
 Platform
-    ID
+    ID*
     Name
     Date
     LogoPath
     ImagePath
     Description
-
-PlatformManufacturer
-    PlatformID
     ManufacturerID (Publisher)
 
 Genre
-    ID
+    ID*
     Name
     Description
 
 Language
-    ID
+    ID*
     Name
-    Flag
+    FlagPath
 
 Country
-    ID
+    ID*
     Name
-    Flag
+    FlagPath
 
 Game
-    ID
+    ID*
     Name
     Date
-    ESRB
     ProgressType
     ProgressLength
     Achievements
     Cover
     Description
+    DeveloperID
+    PublisherID
 
+GameEsrb
+    GameID*
+    EsrbID*
+
+Esrb
+    ID*
+    Rating
+    Description
+    
 Expansion
-    ID
+    ID*
     Name
-    Cover
+    CoverPath
     ProgressType
     ProgressLength
     Description
 
 Edition
-    ID
+    ID*
     Name
-    Cover
+    CoverPath
     Description
 
 GamePlatform
-    GameID
-    PlatformID
-
-GameDeveloper
-    GameID
-    DeveloperID
-
-GamePublisher
-    GameID
-    PublisherID
+    GameID*
+    PlatformID*
 
 GameGenre
-    GameID
-    GenreID
+    GameID*
+    GenreID*
 
 GameAudioLanguage
-    GameID
-    LanguageID
+    GameID*
+    LanguageID*
     
 GameTextLanguage
-    GameID
-    LanguageID
+    GameID*
+    LanguageID*
 
-GameExpansionPlatform
-    GameID
-    ExpansionID
-    PlatformID
+GameExpansion
+    GameID*
+    ExpansionID*
+    
+ExpansionPlatform
+    ExpansionID*
+    PlatformID*
 
-GameEditionPlatform
-    GameID
-    EditionID
-    PlatformID
+GameEdition
+    GameID*
+    EditionID*
+    
+EditionPlatform
+    EditionID*
+    PlatformID*
 
-GameEditionExpansion
-    EditionID
-    ExpansionID
+EditionExpansion
+    EditionID*
+    ExpansionID*
 
 GameTag
-    GameID
-    TagID
+    GameID*
+    TagID*
 
 Tag
-    ID
+    ID*
     Name
     Description
 
 User
-    ID
-    Nickname
+    ID*
+    Username
     Password
-    Firstname (Optional)
-    Surname (Optional)
-    E-mail
-    Avatar
+    Email
     JoinTime
+    Avatar
     SteamID
     PsnID
     XboxID
@@ -142,74 +137,104 @@ User
     Description
 
 UserCountry
-    UserID
-    CountryID
+    UserID*
+    CountryID*
 
 UserPlatform
-    UserID
-    PlatformID
+    UserID*
+    PlatformID*
 
 UserFavorite
-    UserID
-    GameID
+    UserID*
+    GameID*
     Order
 
-UserFriend
-    UserID
-    FriendID
+Friend
+    Friend1ID*
+    Friend2ID*
 
 UserStatus
-    UserID
+    UserID*
     Time
     Status
 
 List
-    UserID
-    Game
-    Expansions
-    Edition
-    Status
+    UserID*
+    GameID*
     Priority
     Progress
-    Achievements
-    Tags
+    (Achievements)
+    (Tags)
     Notes
-    Hours played
+    (Hours played)
+    
+ListStatus
+    UserID*
+    GameID*
+    StatusID*
+    Timestamp*
 
-Recommendation
-    ID
+Status
+    ID*
+    Description
+    
+ListExpansion
+    UserID*
+    GameID*
+    ExpansionID*
+    
+ListEdition
+    UserID*
+    GameID*
+    EditionID*
+
+Review
+    ID*
+    GameID
     UserID
-    Date
-    Game
-    Comment
+    Timestamp
+    Score
+    Text
 
+UserGameTag
+    UserID*
+    GameID*
+    TagID*
+    
 Collage
-    ID
+    ID*
+    UserID
     Date
     Name
 
-CollageUser
-    CollageID
-    UserID
-
 CollageGame
-    CollageID
-    GameID
-    PlatformID
+    CollageID*
+    GameID*
 
 CollageTag
-    CollageID
-    TagID
+    CollageID*
+    TagID*
     
 Comment
-    ID
-    User
+    ID*
+    UserID
     Time
-    Parent
-    Message
+    Comment
+    
+CommentUpdate
+    CommentID*
+    UpdateID*
+    
+CommentBlog
+    CommentID*
+    BlogID*
+    
+CommentUser
+    CommentID*
+    UserID*
     
 Blog
-    ID
-    User
+    ID*
+    UserID
     Time
     Message

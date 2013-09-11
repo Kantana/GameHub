@@ -40,7 +40,7 @@
             = Achievements (must have linked account)
             = Custom notes/checklists/goals/targets
             = Tags
-            = Hours played (from Steam etc. or manual input?)
+            = Hours played? (from Steam etc. or manual input?)
             = DLC?
             = Installed?
     - Consolidated pages for identical multiplatform games/different editions (separate ratings?)

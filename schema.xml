@@ -1,112 +1,198 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<database name="MyGameList" defaultIdMethod="native">
+<database name="GameHub" defaultIdMethod="native">
     <table name="Developer" phpName="Developer">
         <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="Name" type="varchar" size="255" required="true" />
-        <column name="Country" type="varchar" size="255" />
-        <column name="Founded" type="timestamp" />
-        <column name="Closed" type="timestamp" />
-        <column name="LogoPath" type="longtext" />
-        <column name="Description" type="longtext" />
-    </table>
-    
-    <table name="DeveloperParent" phpName="DeveloperParent">
-        <column name="IdParent" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="IdChild" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <foreign-key foreignTable="DeveloperParent" phpName="DeveloperParent" refPhpName="Developer">
-            <reference local="IdParent" foreign="Id" />
-        </foreign-key>
-        <foreign-key foreignTable="Developer" phpName="Developer" refPhpName="DeveloperParent">
-            <reference local="IdChild" foreign="Id" />
+        <column name="Country" type="integer" />
+        <column name="Founded" type="date" />
+        <column name="Closed" type="date" />
+        <column name="LogoPath" type="longvarchar" />
+        <column name="Description" type="longvarchar" />
+        
+        <foreign-key foreignTable="Country" phpName="Country" refPhpName="Developer">
+            <reference local="Country" foreign="Id" />
         </foreign-key>
     </table>
     
     <table name="Publisher" phpName="Publisher">
         <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="Name" type="varchar" size="255" required="true" />
-        <column name="Country" type="varchar" size="255" />
-        <column name="Founded" type="timestamp" />
-        <column name="Closed" type="timestamp" />
-        <column name="LogoPath" type="longtext" />
-        <column name="Description" type="longtext" />
-    </table>
-    
-    <table name="PublisherParent" phpName="PublisherParent">
-        <column name="IdParent" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="IdChild" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <foreign-key foreignTable="Publisher" phpName="Publisher" refPhpName="PublisherParent">
-            <reference local="IdParent" foreign="Id" />
-        </foreign-key>
-        <foreign-key foreignTable="Publisher" phpName="Publisher" refPhpName="PublisherParent">
-            <reference local="IdChild" foreign="Id" />
+        <column name="Country" type="integer" />
+        <column name="Founded" type="date" />
+        <column name="Closed" type="date" />
+        <column name="LogoPath" type="longvarchar" />
+        <column name="Description" type="longvarchar" />
+        
+        <foreign-key foreignTable="Country" phpName="Country" refPhpName="Publisher">
+            <reference local="Country" foreign="Id" />
         </foreign-key>
     </table>
     
     <table name="Platform" phpName="Platform">
         <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="Name" type="varchar" size="255" required="true" />
-        <column name="Release" type="timestamp" />
-        <column name="LogoPath" type="longtext" />
-        <column name="ImagePath" type="longtext" />
-        <column name="Description" type="longtext" />
-    </table>
-    
-    <table name="PlatformManufacturer" phpName="PlatformManufacturer">
-        <column name="IdPlatform" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="IdManufacturer" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <foreign-key foreignTable="Platform" phpName="Platform" refPhpName="PlatformManufacturer">
-            <reference local="IdParent" foreign="Id" />
-        </foreign-key>
-        <foreign-key foreignTable="Publisher" phpName="Publisher" refPhpName="PlatformManufacturer">
-            <reference local="IdManufacturer" foreign="Id" />
+        <column name="Manufacturer" type="integer" />
+        <column name="Release" type="date" />
+        <column name="LogoPath" type="longvarchar" />
+        <column name="ImagePath" type="longvarchar" />
+        <column name="Description" type="longvarchar" />
+        
+        <foreign-key foreignTable="Publisher" phpName="Publisher" refPhpName="Platform">
+            <reference local="Manufacturer" foreign="Id" />
         </foreign-key>
     </table>
     
     <table name="Game" phpName="Game">
         <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="Name" type="varchar" size="255" required="true" />
-        <column name="Release" type="timestamp" />
-        <column name="CoverPath" type="longtext" />
-        <column name="ProgressNote" type="longtext" />
-        <column name="Description" type="longtext" />
+        <column name="Developer" type="integer">
+        <column name="Publisher" type="integer">
+        <column name="ReleaseUS" type="date" />
+        <column name="ReleaseEU" type="date" />
+        <column name="ReleaseJP" type="date" />
+        <column name="CoverPath" type="longvarchar" />
+        <column name="ProgressNote" type="longvarchar" />
+        <column name="Description" type="longvarchar" />
+        
+        <foreign-key foreignTable="Developer" phpName="Developer" refPhpName="Game">
+            <reference local="Developer" foreign="Id" />
+        </foreign-key>
+        <foreign-key foreignTable="Publisher" phpName="Publisher" refPhpName="Game">
+            <reference local="Publisher" foreign="Id" />
+        </foreign-key>
     </table>
     
     <table name="Expansion" phpName="Expansion">
         <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="Name" type="varchar" size="255" required="true" />
-        <column name="Release" type="timestamp" />
-        <column name="CoverPath" type="longtext" />
-        <column name="ProgressNote" type="longtext" />
-        <column name="Description" type="longtext" />
+        <column name="Release" type="date" />
+        <column name="CoverPath" type="longvarchar" />
+        <column name="ProgressNote" type="longvarchar" />
+        <column name="Description" type="longvarchar" />
     </table>
     
     <table name="Genre" phpName="Genre">
         <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="Name" type="varchar" size="255" required="true" />
-        <column name="Description" type="longtext" />
+        <column name="Description" type="longvarchar" />
     </table>
     
     <table name="Language" phpName="Language">
         <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="Name" type="varchar" size="255" required="true" />
-        <column name="FlagPath" type="longtext" />
+        <column name="FlagPath" type="longvarchar" />
     </table>
     
     <table name="Country" phpName="Country">
         <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="Name" type="varchar" size="255" required="true" />
-        <column name="FlagPath" type="longtext" />
+        <column name="FlagPath" type="longvarchar" />
     </table>
     
     <table name="Edition" phpName="Edition">
         <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="Name" type="varchar" size="255" required="true" />
-        <column name="CoverPath" type="longtext" />
-        <column name="Description" type="longtext" />
+        <column name="CoverPath" type="longvarchar" />
+        <column name="Description" type="longvarchar" />
     </table>
     
-    <table name="GamePlatform" phpName="GamePlatform">
+    <table name="Esrb" phpName="Esrb">
+        <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="Rating" type="varchar" size="255" required="true" />
+        <column name="Description" type="longvarchar" />
+    </table>
+    
+    <table name="Tag" phpName="Tag">
+        <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="Name" type="varchar" size="255" required="true" />
+        <column name="Description" type="longvarchar" />
+    </table>
+    
+    <table name="User" phpName="User">
+        <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="Username" type="varchar" size="255" required="true" />
+        <column name="Email" type="longvarchar" />
+        <column name="JoinTime" type="timestamp" />
+        <column name="AvatarPath" type="longvarchar" />
+        <column name="SteamId" type="longvarchar" />
+        <column name="PsnId" type="longvarchar" />
+        <column name="XboxId" type="longvarchar" />
+        <column name="WiiId" type="longvarchar" />
+        <column name="3dsId" type="longvarchar" />
+        <column name="Description" type="longvarchar" />
+    </table>
+    
+    <table name="Comment" phpName="Comment">
+        <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="UserId" type="integer" required="true" />
+        <column name="Timestamp" type="timestamp" required="true" />
+        <column name="Comment" type="longvarchar" required="true" />
+        
+        <foreign-key foreignTable="User" phpName="User" refPhpName="Comment">
+            <reference local="UserId" foreign="Id" />
+        </foreign-key>
+    </table>
+    
+    <table name="Collage" phpName="Collage">
+        <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="UserId" type="integer" required="true" />
+        <column name="Name" type="varchar" size="255" required="true" />
+        
+        <foreign-key foreignTable="User" phpName="User" refPhpName="Collage">
+            <reference local="UserId" foreign="Id" />
+        </foreign-key>
+    </table>
+    
+    <table name="Blog" phpName="Blog">
+        <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="UserId" type="integer" required="true" />
+        <column name="Timestamp" type="timestamp" required="true" />
+        <column name="Text" type="longvarchar" required="true" />
+        
+        <foreign-key foreignTable="User" phpName="User" refPhpName="Blog">
+            <reference local="UserId" foreign="Id" />
+        </foreign-key>
+    </table>
+    
+    <table name="Status" phpName="Status">
+        <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="Description" type="varchar" size="255" required="true" />
+    </table>
+    
+    <table name="Update" phpName="Update">
+        <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="UserId" type="integer" required="true" />
+        <column name="Timestamp" type="timestamp" required="true" />
+        <column name="Text" type="longvarchar" required="true" />
+        
+        <foreign-key foreignTable="User" phpName="User" refPhpName="Update">
+            <reference local="UserId" foreign="Id" />
+        </foreign-key>
+    </table>
+    
+    <table name="Friend" phpName="Friend" isCrossRef="true">
+        <column name="User1Id" type="integer" required="true" primaryKey="true" />
+        <column name="User2Id" type="integer" required="true" primaryKey="true" />
+        
+        <foreign-key foreignTable="User" phpName="User" refPhpName="Friend">
+            <reference local="User1Id" foreign="Id" />
+        </foreign-key>
+        <foreign-key foreignTable="User" phpName="User" refPhpName="Friend">
+            <reference local="User2Id" foreign="Id" />
+        </foreign-key>
+    </table>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <table name="GamePlatform" phpName="GamePlatform" isCrossRef="true">
         <column name="IdGame" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="IdPlatform" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <foreign-key foreignTable="Game" phpName="Game" refPhpName="GamePlatform">
@@ -117,7 +203,7 @@
         </foreign-key>
     </table>
     
-    <table name="GameDeveloper" phpName="GameDeveloper">
+    <table name="GameDeveloper" phpName="GameDeveloper" isCrossRef="true">
         <column name="IdGame" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="IdDeveloper" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <foreign-key foreignTable="Game" phpName="Game" refPhpName="GameDeveloper">
@@ -128,7 +214,7 @@
         </foreign-key>
     </table>
     
-    <table name="GamePublisher" phpName="GamePublisher">
+    <table name="GamePublisher" phpName="GamePublisher" isCrossRef="true">
         <column name="IdGame" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="IdPublisher" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <foreign-key foreignTable="Game" phpName="Game" refPhpName="GamePublisher">
@@ -139,7 +225,7 @@
         </foreign-key>
     </table>
     
-    <table name="GameGenre" phpName="GameGenre">
+    <table name="GameGenre" phpName="GameGenre" isCrossRef="true">
         <column name="IdGame" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="IdGenre" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <foreign-key foreignTable="Game" phpName="Game" refPhpName="GameGenre>
@@ -150,7 +236,7 @@
         </foreign-key>
     </table>
     
-    <table name="GameLanguageAudio" phpName="GameLanguageAudio">
+    <table name="GameLanguageAudio" phpName="GameLanguageAudio" isCrossRef="true">
         <column name="IdGame" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="IdLanguage" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <foreign-key foreignTable="Game" phpName="Game" refPhpName="GameLanguageAudio">
@@ -161,7 +247,7 @@
         </foreign-key>
     </table>
     
-    <table name="GameLanguageText" phpName="GameLanguageText">
+    <table name="GameLanguageText" phpName="GameLanguageText" isCrossRef="true">
         <column name="IdGame" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="IdLanguage" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <foreign-key foreignTable="Game" phpName="Game" refPhpName="GameLanguageText">
@@ -172,7 +258,7 @@
         </foreign-key>
     </table>
     
-    <table name="GamePlatformExpansion" phpName="GamePlatformExpansion">
+    <table name="GamePlatformExpansion" phpName="GamePlatformExpansion" isCrossRef="true">
         <column name="IdGame" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="IdPlatform" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="IdExpansion" type="integer" required="true" primaryKey="true" autoIncrement="true" />
@@ -186,4 +272,17 @@
             <reference local="IdExpansion" foreign="Id" />
         </foreign-key>
     </table>
+    
+    <table name="GameExpansion" phpName="GameExpansion" isCrossRef="true">
+        <column name="GameId" type="integer" required="true" primaryKey="true" />
+        <column name="ExpansionId" type="integer" required="true" primaryKey="true" />
+        
+        <foreign-key foreignTable="Game" phpName="Game" refPhpName="GameExpansion">
+            <reference local="GameId" foreign="Id" />
+        </foreign-key>
+        <foreign-key foreignTable="Expansion" phpName="Expansion" refPhpName="GameExpansion">
+            <reference local="ExpansionId" foreign="Id" />
+        </foreign-key>
+    </table>
+
 </database>
