@@ -323,8 +323,9 @@
     <table name="CollageGame" phpName="CollageGame" isCrossRef="true">
         <column name="GameId" type="integer" required="true" primaryKey="true" />
         <column name="CollageId" type="integer" required="true" primaryKey="true" />
+        <column name="Order" type="integer" required="false" />
         <unique>
-            <unique-column name="Order" type="integer" required="false" />
+            <unique-column name="Order" />
         </unique>
         
         <foreign-key foreignTable="Collage" phpName="Collage" refPhpName="CollageGame">
