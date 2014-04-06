@@ -5,7 +5,7 @@
     <table name="Developer" phpName="Developer">
         <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="Name" type="varchar" size="255" required="true" />
-        <column name="Country" type="integer" />
+        <column name="Country" required="false" type="integer" />
         <column name="Founded" type="date" />
         <column name="Closed" type="date" />
         <column name="LogoPath" type="longvarchar" />
