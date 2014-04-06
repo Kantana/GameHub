@@ -139,7 +139,13 @@
             <reference local="Country" foreign="Id" />
         </foreign-key>
     </table>
-    
+
+    <table name="Friend" phpName="Friend" isCrossRef="true">
+        <behavior name="equal_nest">
+            <parameter name="parent_table" value="User" />
+        </behavior>
+    </table>
+
     <table name="Comment" phpName="Comment">
         <column name="Id" type="bigint" required="true" primaryKey="true" autoIncrement="true" />
         <column name="UserId" type="bigint" required="true" />
@@ -189,18 +195,6 @@
         
         <foreign-key foreignTable="User" phpName="User" refPhpName="Update">
             <reference local="UserId" foreign="Id" />
-        </foreign-key>
-    </table>
-    
-    <table name="Friend" phpName="Friend" isCrossRef="true">
-        <column name="User1Id" type="integer" required="true" primaryKey="true" />
-        <column name="User2Id" type="integer" required="true" primaryKey="true" />
-        
-        <foreign-key foreignTable="User" phpName="User" refPhpName="Friend">
-            <reference local="User1Id" foreign="Id" />
-        </foreign-key>
-        <foreign-key foreignTable="User" phpName="User" refPhpName="Friend">
-            <reference local="User2Id" foreign="Id" />
         </foreign-key>
     </table>
     
