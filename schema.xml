@@ -33,22 +33,22 @@
     <table name="Platform" phpName="Platform">
         <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="Name" type="varchar" size="255" required="true" />
-        <column name="Manufacturer" type="integer" />
+        <column name="ManufacturerId" type="integer" />
         <column name="Release" type="date" />
         <column name="LogoPath" type="longvarchar" />
         <column name="ImagePath" type="longvarchar" />
         <column name="Description" type="longvarchar" />
         
         <foreign-key foreignTable="Publisher" phpName="Publisher" refPhpName="Platform">
-            <reference local="Manufacturer" foreign="Id" />
+            <reference local="ManufacturerId" foreign="Id" />
         </foreign-key>
     </table>
     
     <table name="Game" phpName="Game">
         <column name="Id" type="bigint" required="true" primaryKey="true" autoIncrement="true" />
         <column name="Name" type="varchar" size="255" required="true" />
-        <column name="Developer" type="integer" />
-        <column name="Publisher" type="integer" />
+        <column name="DeveloperId" type="integer" />
+        <column name="PublisherId" type="integer" />
         <column name="ReleaseUS" type="date" />
         <column name="ReleaseEU" type="date" />
         <column name="ReleaseJP" type="date" />
@@ -56,10 +56,10 @@
         <column name="Description" type="longvarchar" />
         
         <foreign-key foreignTable="Developer" phpName="Developer" refPhpName="Game">
-            <reference local="Developer" foreign="Id" />
+            <reference local="DeveloperId" foreign="Id" />
         </foreign-key>
         <foreign-key foreignTable="Publisher" phpName="Publisher" refPhpName="Game">
-            <reference local="Publisher" foreign="Id" />
+            <reference local="PublisherId" foreign="Id" />
         </foreign-key>
     </table>
     
@@ -67,8 +67,8 @@
         <column name="Id" type="bigint" required="true" primaryKey="true" autoIncrement="true" />
         <column name="Name" type="varchar" size="255" required="true" />
         <column name="ParentGame" type="integer" required="true" />
-        <column name="Developer" type="integer" />
-        <column name="Publisher" type="integer" />
+        <column name="DeveloperId" type="integer" />
+        <column name="PublisherId" type="integer" />
         <column name="ReleaseUS" type="date" />
         <column name="ReleaseEU" type="date" />
         <column name="ReleaseJP" type="date" />
@@ -79,10 +79,10 @@
             <reference local="ParentGame" foreign="Id" />
         </foreign-key>
         <foreign-key foreignTable="Developer" phpName="Developer" refPhpName="Expansion">
-            <reference local="Developer" foreign="Id" />
+            <reference local="DeveloperId" foreign="Id" />
         </foreign-key>
         <foreign-key foreignTable="Publisher" phpName="Publisher" refPhpName="Expansion">
-            <reference local="Publisher" foreign="Id" />
+            <reference local="PublisherId" foreign="Id" />
         </foreign-key>
     </table>
     
@@ -128,7 +128,7 @@
         <column name="Username" type="varchar" size="20" required="true" />
         <column name="Email" type="longvarchar" />
         <column name="JoinTime" type="timestamp" />
-        <column name="Country" type="integer" />
+        <column name="CountryId" type="integer" />
         <column name="AvatarPath" type="longvarchar" />
         <column name="SteamId" type="longvarchar" />
         <column name="PsnId" type="longvarchar" />
@@ -136,7 +136,7 @@
         <column name="Description" type="longvarchar" />
         
         <foreign-key foreignTable="Country" phpName="Country" refPhpName="User">
-            <reference local="Country" foreign="Id" />
+            <reference local="CountryId" foreign="Id" />
         </foreign-key>
     </table>
 
@@ -199,46 +199,46 @@
     </table>
     
     <table name="GamePlatform" phpName="GamePlatform" isCrossRef="true">
-        <column name="IdGame" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="IdPlatform" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="GameId" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="PlatformId" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <foreign-key foreignTable="Game" phpName="Game" refPhpName="GamePlatform">
-            <reference local="IdGame" foreign="Id" />
+            <reference local="GameId" foreign="Id" />
         </foreign-key>
         <foreign-key foreignTable="Platform" phpName="Platform" refPhpName="GamePlatform">
-            <reference local="IdPlatform" foreign="Id" />
+            <reference local="PlatformId" foreign="Id" />
         </foreign-key>
     </table>
     
     <table name="GameGenre" phpName="GameGenre" isCrossRef="true">
-        <column name="IdGame" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="IdGenre" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="GameId" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="GenreId" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <foreign-key foreignTable="Game" phpName="Game" refPhpName="GameGenre">
-            <reference local="IdGame" foreign="Id" />
+            <reference local="GameId" foreign="Id" />
         </foreign-key>
         <foreign-key foreignTable="Genre" phpName="Genre" refPhpName="GameGenre">
-            <reference local="IdGenre" foreign="Id" />
+            <reference local="GenreId" foreign="Id" />
         </foreign-key>
     </table>
     
     <table name="GameLanguageAudio" phpName="GameLanguageAudio" isCrossRef="true">
-        <column name="IdGame" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="IdLanguage" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="GameId" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="LanguageId" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <foreign-key foreignTable="Game" phpName="Game" refPhpName="GameLanguageAudio">
-            <reference local="IdGame" foreign="Id" />
+            <reference local="GameId" foreign="Id" />
         </foreign-key>
         <foreign-key foreignTable="Language" phpName="Language" refPhpName="GameLanguageAudio">
-            <reference local="IdLanguage" foreign="Id" />
+            <reference local="LanguageId" foreign="Id" />
         </foreign-key>
     </table>
     
     <table name="GameLanguageText" phpName="GameLanguageText" isCrossRef="true">
-        <column name="IdGame" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="IdLanguage" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="GameId" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="LanguageId" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <foreign-key foreignTable="Game" phpName="Game" refPhpName="GameLanguageText">
-            <reference local="IdGame" foreign="Id" />
+            <reference local="GameId" foreign="Id" />
         </foreign-key>
         <foreign-key foreignTable="Language" phpName="Language" refPhpName="GameLanguageText">
-            <reference local="IdLanguage" foreign="Id" />
+            <reference local="LanguageId" foreign="Id" />
         </foreign-key>
     </table>
     
