@@ -11,7 +11,7 @@
         <column name="LogoPath" type="longvarchar" />
         <column name="Description" type="longvarchar" />
         
-        <foreign-key foreignTable="Country" phpName="Country" refPhpName="Developer">
+        <foreign-key foreignTable="Country">
             <reference local="Country" foreign="Id" />
         </foreign-key>
     </table>
