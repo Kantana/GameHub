@@ -28,9 +28,9 @@ $ vendor/bin/propel-gen om
 $ vendor/bin/propel-gen sql
 
 $ mysql -h localhost -u root -p
-> CREATE DATABASE aptostat;
-> CREATE USER 'aptostat'@'localhost' IDENTIFIED BY 'aptostat';
-> GRANT ALL ON aptostat.* TO 'aptostat'@'localhost';
+> CREATE DATABASE gamehub;
+> CREATE USER 'gamehub'@'localhost' IDENTIFIED BY 'hubgame';
+> GRANT ALL ON gamehub.* TO 'gamehub'@'localhost';
 > exit;
 
 $ vendor/bin/propel-gen insert-sql

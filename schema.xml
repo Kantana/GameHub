@@ -199,8 +199,8 @@
     </table>
     
     <table name="GamePlatform" phpName="GamePlatform" isCrossRef="true">
-        <column name="GameId" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="PlatformId" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="GameId" type="integer" required="true" primaryKey="true" />
+        <column name="PlatformId" type="integer" required="true" primaryKey="true" />
         <foreign-key foreignTable="Game" phpName="Game" refPhpName="GamePlatform">
             <reference local="GameId" foreign="Id" />
         </foreign-key>
@@ -210,8 +210,8 @@
     </table>
     
     <table name="GameGenre" phpName="GameGenre" isCrossRef="true">
-        <column name="GameId" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="GenreId" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="GameId" type="integer" required="true" primaryKey="true" />
+        <column name="GenreId" type="integer" required="true" primaryKey="true" />
         <foreign-key foreignTable="Game" phpName="Game" refPhpName="GameGenre">
             <reference local="GameId" foreign="Id" />
         </foreign-key>
@@ -221,8 +221,8 @@
     </table>
     
     <table name="GameLanguageAudio" phpName="GameLanguageAudio" isCrossRef="true">
-        <column name="GameId" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="LanguageId" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="GameId" type="integer" required="true" primaryKey="true" />
+        <column name="LanguageId" type="integer" required="true" primaryKey="true" />
         <foreign-key foreignTable="Game" phpName="Game" refPhpName="GameLanguageAudio">
             <reference local="GameId" foreign="Id" />
         </foreign-key>
@@ -232,8 +232,8 @@
     </table>
     
     <table name="GameLanguageText" phpName="GameLanguageText" isCrossRef="true">
-        <column name="GameId" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="LanguageId" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="GameId" type="integer" required="true" primaryKey="true" />
+        <column name="LanguageId" type="integer" required="true" primaryKey="true" />
         <foreign-key foreignTable="Game" phpName="Game" refPhpName="GameLanguageText">
             <reference local="GameId" foreign="Id" />
         </foreign-key>
