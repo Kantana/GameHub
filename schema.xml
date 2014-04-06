@@ -140,7 +140,7 @@
         </foreign-key>
     </table>
 
-    <table name="Friend" phpName="Friend" isCrossRef="true">
+    <table name="Friend" phpName="Friend">
         <behavior name="equal_nest">
             <parameter name="parent_table" value="User" />
         </behavior>
