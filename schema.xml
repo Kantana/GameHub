@@ -125,7 +125,7 @@
     
     <table name="User" phpName="User">
         <column name="Id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="Username" type="varchar" size="255" required="true" />
+        <column name="Username" type="varchar" size="20" required="true" />
         <column name="Email" type="longvarchar" />
         <column name="JoinTime" type="timestamp" />
         <column name="Country" type="integer" />
@@ -367,8 +367,8 @@
         <column name="UserId" type="integer" required="true" primaryKey="true" />
         <column name="GameId" type="integer" required="true" primaryKey="true" />
         <column name="Priority" type="integer" required="true" defaultValue="1" />
-        <column name="ProgressNote" type="varchar" size="255" />
-        <column name="Notes" type="varchar" size="255" />
+        <column name="ProgressNote" type="longvarchar" size="255" />
+        <column name="Notes" type="longvarchar" size="255" />
         
         <foreign-key foreignTable="User" phpName="User" refPhpName="ListGame">
             <reference local="UserId" foreign="Id" />
